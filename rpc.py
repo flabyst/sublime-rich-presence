@@ -4,7 +4,6 @@ import struct
 import tempfile
 
 from os import path
-from socket import socket
 
 class Client:
   def __init__(self, client_id):
@@ -13,7 +12,7 @@ class Client:
     self.ipc_path = tempfile.gettempdir()
 
   def connect(self):
-    self.socket = socket(socket.AF_UNIX, socket.SOCK_STREAM)
+    self.socket = socket.socket(socket.AF_UNIX)
 
     for i in range(10):
       ipc_path = path.join(self.ipc_path,
@@ -29,7 +28,8 @@ class Client:
     })
 
   def disconnect(self):
-    self.socket.shutdown(socket.SOCK_STREAM)
+    self.socket.shutdown(socket.SHUT_RDWR)
+    self.socket.close()
 
   def send(self, opcode, payload):
     payload = json.dumps(payload)
