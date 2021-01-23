@@ -1,18 +1,4 @@
 [
-  {
-    "caption": "Rich Presence: Connect to Discord",
-    "command": "connect"
-  },
-  {
-    "caption": "Rich Presence: Disconnect",
-    "command": "disconnect"
-  },
-  {
-    "args": {
-      "base_file": "${packages}/Rich Presence/Rich Presence.sublime-settings",
-      "default": "{\n\t$0\n}\n"
-    },
-    "caption": "Preferences: Rich Presence Settings",
-    "command": "edit_settings",
-  }
+  { "caption": "Rich Presence: Connect to Discord", "command": "connect" },
+  { "caption": "Rich Presence: Disconnect", "command": "disconnect" }
 ]

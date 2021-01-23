@@ -1,7 +1,7 @@
 import socket
 import json
-import struct
 import tempfile
+import struct
 
 from os import path
 
